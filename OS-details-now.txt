@@ -1,0 +1,594 @@
+
+
+PLAY [Testing] *****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [host2]
+ok: [host1]
+ok: [host5]
+ok: [host4]
+ok: [host6]
+ok: [host9]
+ok: [host3]
+ok: [host7]
+ok: [host8]
+fatal: [host10]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.100.20.137 port 8429: Connection timed out", "unreachable": true}
+ok: [host13]
+ok: [host14]
+ok: [host12]
+ok: [host11]
+ok: [host16]
+ok: [host15]
+ok: [host18]
+ok: [host17]
+ok: [host19]
+ok: [host20]
+ok: [host21]
+ok: [host23]
+ok: [host22]
+ok: [host25]
+ok: [host24]
+ok: [host26]
+ok: [host27]
+ok: [host28]
+ok: [host30]
+ok: [host29]
+ok: [host31]
+ok: [host33]
+ok: [host32]
+ok: [host34]
+ok: [host35]
+fatal: [host40]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.100.20.176 port 8429: Connection refused", "unreachable": true}
+ok: [host37]
+ok: [host38]
+ok: [host36]
+ok: [host41]
+ok: [host39]
+ok: [host42]
+ok: [host43]
+ok: [host45]
+ok: [host44]
+ok: [host46]
+ok: [host47]
+ok: [host50]
+ok: [host48]
+ok: [host52]
+ok: [host49]
+ok: [host54]
+ok: [host53]
+ok: [host55]
+ok: [host56]
+ok: [host59]
+ok: [host58]
+fatal: [host57]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.100.20.182 port 8429: Connection timed out", "unreachable": true}
+ok: [host90]
+fatal: [host60]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.100.20.150 port 22: Connection timed out", "unreachable": true}
+fatal: [host84]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Unable to negotiate with 10.100.20.33 port 8429: no matching host key type found. Their offer: ssh-rsa,ssh-dss", "unreachable": true}
+fatal: [host61]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.100.20.188 port 22: Connection timed out", "unreachable": true}
+fatal: [host62]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.100.20.184 port 22: Connection timed out", "unreachable": true}
+ok: [host51]
+
+TASK [osdetails : Checking OS Details] *****************************************
+ok: [host1] => {
+    "msg": [
+        "Hostname 10.100.20.77",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host2] => {
+    "msg": [
+        "Hostname 10.100.20.166",
+        "ansible_distribution CentOS",
+        "major version 7",
+        "version 7.9"
+    ]
+}
+ok: [host3] => {
+    "msg": [
+        "Hostname 10.100.20.167",
+        "ansible_distribution CentOS",
+        "major version 7",
+        "version 7.9"
+    ]
+}
+ok: [host4] => {
+    "msg": [
+        "Hostname 10.100.20.101",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host5] => {
+    "msg": [
+        "Hostname 10.100.20.102",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host6] => {
+    "msg": [
+        "Hostname 10.100.20.103",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host8] => {
+    "msg": [
+        "Hostname 10.100.20.132",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host7] => {
+    "msg": [
+        "Hostname 10.100.20.129",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host9] => {
+    "msg": [
+        "Hostname 10.100.20.73",
+        "ansible_distribution CentOS",
+        "major version 7",
+        "version 7.7"
+    ]
+}
+ok: [host12] => {
+    "msg": [
+        "Hostname 10.100.20.32",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host13] => {
+    "msg": [
+        "Hostname 10.100.20.146",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host14] => {
+    "msg": [
+        "Hostname 10.100.20.171",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host15] => {
+    "msg": [
+        "Hostname 10.100.20.138",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host16] => {
+    "msg": [
+        "Hostname 10.100.20.82",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host17] => {
+    "msg": [
+        "Hostname 10.100.20.140",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host18] => {
+    "msg": [
+        "Hostname 10.100.20.133",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host11] => {
+    "msg": [
+        "Hostname 10.100.20.183",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host19] => {
+    "msg": [
+        "Hostname 10.100.20.105",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host20] => {
+    "msg": [
+        "Hostname 10.100.20.106",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host21] => {
+    "msg": [
+        "Hostname 10.100.20.85",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host22] => {
+    "msg": [
+        "Hostname 10.100.20.170",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host23] => {
+    "msg": [
+        "Hostname 10.100.20.43",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host24] => {
+    "msg": [
+        "Hostname 10.100.20.31",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host25] => {
+    "msg": [
+        "Hostname 10.100.20.16",
+        "ansible_distribution Debian",
+        "major version 10",
+        "version 10"
+    ]
+}
+ok: [host26] => {
+    "msg": [
+        "Hostname 10.100.20.79",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host27] => {
+    "msg": [
+        "Hostname 10.100.20.75",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host28] => {
+    "msg": [
+        "Hostname 10.100.20.179",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host29] => {
+    "msg": [
+        "Hostname 10.100.20.80",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host30] => {
+    "msg": [
+        "Hostname 10.100.20.44",
+        "ansible_distribution CentOS",
+        "major version 7",
+        "version 7.9"
+    ]
+}
+ok: [host31] => {
+    "msg": [
+        "Hostname 10.100.20.154",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host32] => {
+    "msg": [
+        "Hostname 10.100.20.41",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host33] => {
+    "msg": [
+        "Hostname 10.100.20.136",
+        "ansible_distribution Ubuntu",
+        "major version 21",
+        "version 21.04"
+    ]
+}
+ok: [host34] => {
+    "msg": [
+        "Hostname 10.100.20.158",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host35] => {
+    "msg": [
+        "Hostname 10.100.20.119",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host37] => {
+    "msg": [
+        "Hostname 10.100.20.109",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host38] => {
+    "msg": [
+        "Hostname 10.100.20.131",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host36] => {
+    "msg": [
+        "Hostname 10.100.20.81",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host41] => {
+    "msg": [
+        "Hostname 10.100.20.157",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host39] => {
+    "msg": [
+        "Hostname 10.100.20.113",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host42] => {
+    "msg": [
+        "Hostname 10.100.20.91",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host43] => {
+    "msg": [
+        "Hostname 10.100.20.92",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host44] => {
+    "msg": [
+        "Hostname 10.100.20.147",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host45] => {
+    "msg": [
+        "Hostname 10.100.20.100",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host46] => {
+    "msg": [
+        "Hostname 10.100.20.198",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+ok: [host47] => {
+    "msg": [
+        "Hostname 10.100.20.135",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host48] => {
+    "msg": [
+        "Hostname 10.100.20.104",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host49] => {
+    "msg": [
+        "Hostname 10.100.20.45",
+        "ansible_distribution Ubuntu",
+        "major version 14",
+        "version 14.04"
+    ]
+}
+ok: [host50] => {
+    "msg": [
+        "Hostname 10.100.20.143",
+        "ansible_distribution Ubuntu",
+        "major version 21",
+        "version 21.04"
+    ]
+}
+ok: [host51] => {
+    "msg": [
+        "Hostname 10.100.20.229",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host52] => {
+    "msg": [
+        "Hostname 10.100.20.151",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host53] => {
+    "msg": [
+        "Hostname 10.100.20.84",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host54] => {
+    "msg": [
+        "Hostname 10.100.20.18",
+        "ansible_distribution CentOS",
+        "major version 7",
+        "version 7.9"
+    ]
+}
+ok: [host55] => {
+    "msg": [
+        "Hostname 10.100.20.161",
+        "ansible_distribution Ubuntu",
+        "major version 20",
+        "version 20.04"
+    ]
+}
+ok: [host56] => {
+    "msg": [
+        "Hostname 10.100.20.159",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host58] => {
+    "msg": [
+        "Hostname 10.100.20.144",
+        "ansible_distribution Ubuntu",
+        "major version 16",
+        "version 16.04"
+    ]
+}
+ok: [host59] => {
+    "msg": [
+        "Hostname 10.100.20.139",
+        "ansible_distribution Ubuntu",
+        "major version 18",
+        "version 18.04"
+    ]
+}
+ok: [host90] => {
+    "msg": [
+        "Hostname 10.100.20.72",
+        "ansible_distribution Ubuntu",
+        "major version 22",
+        "version 22.04"
+    ]
+}
+
+PLAY RECAP *********************************************************************
+host1                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host10                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host11                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host12                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host13                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host14                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host15                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host16                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host17                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host18                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host19                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host2                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host20                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host21                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host22                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host23                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host24                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host25                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host26                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host27                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host28                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host29                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host3                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host30                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host31                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host32                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host33                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host34                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host35                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host36                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host37                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host38                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host39                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host4                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host40                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host41                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host42                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host43                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host44                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host45                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host46                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host47                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host48                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host49                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host5                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host50                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host51                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host52                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host53                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host54                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host55                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host56                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host57                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host58                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host59                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host6                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host60                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host61                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host62                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host7                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host8                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host84                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+host9                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+host90                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

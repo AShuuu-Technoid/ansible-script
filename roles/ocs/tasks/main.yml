@@ -1,0 +1,98 @@
+---
+- name: Install Package on Ubuntu
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - make
+    - gcc
+    - libmodule-install-perl
+    - dmidecode
+    - libxml-simple-perl
+    - libcompress-zlib-perl
+    - openssl
+    - libnet-ip-perl
+    - libwww-perl
+    - libdigest-md5-perl
+    - libdata-uuid-perl
+    - libcrypt-ssleay-perl
+    - libnet-snmp-perl
+    - libproc-pid-file-perl
+    - libproc-daemon-perl
+    - net-tools
+    - libsys-syslog-perl
+    - pciutils
+    - smartmontools
+    - read-edid
+    - nmap
+    - libnet-netmask-perl
+  # loop: "{{ package_list }}"
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install Package on CentOS
+  become: true
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - make
+    - gcc
+    - dmidecode
+    - openssl
+    - net-tools
+    - pciutils
+    - smartmontools
+    - nmap
+    - perl-XML-Simple
+    - perl-devel
+    - perl-Compress-Zlib
+    - perl-Net-IP
+    - perl-Digest-MD5
+    - perl-Net-SSLeay
+    - perl-Data-UUID
+    - perl-Crypt-SSLeay
+    - perl-Net-SNMP
+    - perl-Proc-Daemon
+    - perl-Proc-PID-File
+    - perl-Sys-Syslog
+    - monitor-edid
+  # loop: "{{ package_list }}"
+  when: ansible_distribution == 'CentOS'
+
+- name: Download Ocsinventory Agent
+  get_url:
+    url: "https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.10.0/Ocsinventory-Unix-Agent-2.10.0.tar.gz"
+    dest: /tmp/Ocsinventory-Unix-Agent-2.10.0.tar.gz
+  when: ansible_distribution in ['CentOS', 'Ubuntu']
+  # state: present
+
+- name: Extract Ocsinventory Agent
+  command: "tar -xvzf /tmp/Ocsinventory-Unix-Agent-2.10.0.tar.gz -C /tmp/"
+  when: ansible_distribution in ['CentOS', 'Ubuntu']
+# - name: Change directory to Ocsinventory Agent
+#   command: "cd /tmp/Ocsinventory-Unix-Agent-2.10.0"
+# - name: Change directory
+#   shell:
+#     cmd: ls
+#     chdir: /tmp/Ocsinventory-Unix-Agent-2.10.0
+# - name: Debug Information
+#   shell:
+#     cmd: touch test.txt
+#     chdir: /tmp/Ocsinventory-Unix-Agent-2.10.0
+- name: Install Ocsinventory Agent
+  shell:
+    cmd: "sudo env PERL_AUTOINSTALL=1 perl Makefile.PL && make && make install && perl postinst.pl --nowizard --server=https://itreport.xerago.com/ocsinventory --crontab --nossl"
+    chdir: /tmp/Ocsinventory-Unix-Agent-2.10.0
+  when: ansible_distribution in ['CentOS', 'Ubuntu']
+
+- name: Run Ocsinventory Agent
+  shell:
+    cmd: "sudo ocsinventory-agent --server https://itreport.xerago.com/ocsinventory"
+    chdir: /tmp/Ocsinventory-Unix-Agent-2.10.0
+  when: ansible_distribution in ['CentOS', 'Ubuntu']
+
+- name: Remove OCSinventory Agent
+  shell:
+    cmd: "rm -rf /tmp/Ocsinventory-Unix-Agent-2.10.0"
+  when: ansible_distribution in ['CentOS', 'Ubuntu']

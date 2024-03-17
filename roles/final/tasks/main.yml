@@ -1,0 +1,48 @@
+# ---
+# - name: Checking OS Details
+#   become_user: root
+#   become_method: sudo
+#   debug:
+#     msg:
+#       - "Hostname {{ hostvars[inventory_hostname].ansible_ssh_host }}"
+#       - "ansible_distribution {{ hostvars[inventory_hostname].ansible_distribution }}"
+#       - "major version {{ hostvars[inventory_hostname].ansible_distribution_major_version }}"
+#       - "version {{ hostvars[inventory_hostname].ansible_distribution_version }}"
+
+# - name: Save file as CSV
+#   tasks:
+#     local_action: lineinfil e  state=present create=yes line={{ item }} path="/home/ashwin/OS-Details.txt"
+#     with_items:
+#       - "Hostname: {{ hostvars[inventory_hostname].ansible_ssh_host }}, OS: {{ hostvars[inventory_hostname].ansible_distribution }}, version: {{ hostvars[inventory_hostname].ansible_distribution_version }}"
+#       # - "OS Name: {{ hostvars[inventory_hostname].ansible_distribution }}"
+#       # - "version: {{ hostvars[inventory_hostname].ansible_distribution_version }}"
+---
+- name: Printing OS Details
+  debug:
+    msg:
+      - "Hostname {{ hostvars[inventory_hostname].ansible_ssh_host }}"
+      - "ansible_distribution {{ hostvars[inventory_hostname].ansible_distribution }}"
+      - "major version {{ hostvars[inventory_hostname].ansible_distribution_major_version }}"
+      - "version {{ hostvars[inventory_hostname].ansible_distribution_version }}"
+
+- name: Set header
+  local_action:
+    module: lineinfile
+    path: "/home/ashwin/OS-Details.csv"
+    line: "Hostname, OS Name, Versions"
+    create: yes
+    state: present
+    # mode: 777
+    # with_items:
+    #   - "{{ Hostname,OS NAme, Version }}"
+    # run_once: true
+
+- name: Checking OS Details
+  local_action:
+    module: lineinfile
+    path: "/home/ashwin/OS-Details.csv"
+    line: "{{ hostvars[inventory_hostname].ansible_ssh_host }},{{ hostvars[inventory_hostname].ansible_distribution }},{{ hostvars[inventory_hostname].ansible_distribution_version }}"
+    # create: yes
+    state: present
+    # with_items:
+    # - "{{ hostvars[inventory_hostname].ansible_ssh_host }},{{ hostvars[inventory_hostname].ansible_distribution }},{{ hostvars[inventory_hostname].ansible_distribution_version }}"

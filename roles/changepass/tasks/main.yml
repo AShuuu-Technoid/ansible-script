@@ -1,0 +1,9 @@
+---
+- name: Change xeragouser password
+  vars:
+    myuser: "xeragouser"
+    mypassword: "X3r@g0#10x"
+  ansible.builtin.user:
+    name: "{{myuser}}"
+    state: present
+    password: "{{ mypassword | password_hash('sha512') }}"

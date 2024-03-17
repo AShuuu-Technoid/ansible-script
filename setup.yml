@@ -1,0 +1,19 @@
+---
+- name: Testing
+  hosts: xeragouser # change host name here
+  become_user: root
+  become_method: sudo
+  become: yes
+  # remote_user: xeragouser # change username here
+  # become: yes
+  # become_user: root
+  # become_method: sudo
+
+  roles:
+    # - osdetails
+    - ssh_keyadd
+    # - final
+    # - check_mk
+    # - ocs
+    # - datetime
+    # - changepass

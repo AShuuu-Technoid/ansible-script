@@ -1,0 +1,7 @@
+Hostname : 10.100.20.166
+ansible_distribution : CentOS
+major version : 7
+version : 7.9
+Hostname : 10.100.20.167
+{'msg': ['Hostname 10.100.20.166', 'ansible_distribution CentOS', 'major version 7', 'version 7.9'], 'failed': False, 'changed': False}
+{'msg': ['Hostname 10.100.20.167', 'ansible_distribution CentOS', 'major version 7', 'version 7.9'], 'failed': False, 'changed': False}

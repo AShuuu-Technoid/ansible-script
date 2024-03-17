@@ -1,0 +1,28 @@
+---
+- name: Check if public key is already in authorized_keys
+  authorized_key:
+    user: xeragouser
+    key: "{{ lookup('file','./id_ed25519.pub') }}"
+    state: present
+  register: authorized_key_result
+
+- name: Add public key to authorized_keys
+  authorized_key:
+    user: xeragouser
+    key: "{{ lookup('file','./id_ed25519.pub') }}"
+  when: authorized_key_result.failed
+  # private_key_file: "./id_ed25519"
+#
+# - name: Check if public key is already in authorized_keys
+#   authorized_key:
+#     user: root
+#     key: "{{ lookup('file','./id_ed25519.pub') }}"
+#     state: present
+#   register: authorized_key_result
+
+# - name: Add public key to authorized_keys
+#   authorized_key:
+#     user: root
+#     key: "{{ lookup('file','./id_ed25519.pub') }}"
+#   when: authorized_key_result.failed
+#   # private_key_file: "./id_ed25519"

@@ -1,0 +1,43 @@
+# ---
+# - name: Check if "check_mk.socket" service is present
+#   shell: systemctl status check_mk.socket
+#   register: service_status
+#   failed_when: not(service_status.rc == 3 or service_status.rc == 0)
+#   # ignore_errors: yes
+
+# - name: Copy file if service is present
+#   copy:
+#     src: "{{ item.src }}"
+#     dest: "{{ item.dest }}"
+#   with_items:
+#     - { src: "blocklist", dest: "/usr/lib/check_mk_agent/local" }
+#   when: service_status.rc == 0
+
+# - name: Add execute permission tp file
+#   file:
+#     path: /usr/lib/check_mk_agent/local/blocklist
+#     mode: "+x"
+#   when: service_status.rc == 0
+# # - name: Add execute permission to the copied file
+# #   command: chmod +x /usr/lib/check_mk_agent/local/blocklist
+# #   when:: service_status.rc == 0
+
+---
+- name: copy checkmk package to client
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: 
+    - { src: "check-mk-agent_2.2.0p7-1_all.deb", dest: "/tmp/check-mk-agent_2.2.0p7-1_all.deb", os: "Ubuntu" }
+    - { src: "check-mk-agent-2.2.0p7-1.noarch.rpm ", dest: "/tmp/check-mk-agent-2.2.0p7-1.noarch.rpm", os: "CentOS" }
+  when: ansible_distribution == item.os
+
+- name: Install checkmk package on Ubuntu
+  apt:
+    deb: /tmp/check-mk-agent_2.2.0p7-1_all.deb
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install checkmk on CentOS
+  yum:
+    name: /tmp/check-mk-agent-2.2.0p7-1.noarch.rpm 
+  when: ansible_distribution == "CentOS"
