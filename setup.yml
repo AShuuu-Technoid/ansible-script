@@ -1,6 +1,6 @@
 ---
 - name: Testing
-  hosts: xeragouser # change host name here
+  hosts: test # change host name here
   become_user: root
   become_method: sudo
   become: yes

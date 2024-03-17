@@ -151,3 +151,5 @@ host50	ansible_user=xeragouser	ansible_become_pass="X3r@g0#135"	ansible_password
 host72	ansible_user=xeragouser	ansible_become_pass="X3r@g0#135"	ansible_password="X3r@g0#135"	ansible_ssh_host=10.100.20.156	ansible_port=8429	ansible_ssh_private_key_file="~/.ssh/id_ed25519"
 host70	ansible_user=xeragouser	ansible_become_pass="X3r@g0#135"	ansible_password="X3r@g0#135"	ansible_ssh_host=10.100.20.153	ansible_port=8429	ansible_ssh_private_key_file="~/.ssh/id_ed25519"
 host52	ansible_user=xeragouser	ansible_become_pass="X3r@g0#135"	ansible_password="X3r@g0#135"	ansible_ssh_host=10.100.20.113	ansible_port=8429	ansible_ssh_private_key_file="~/.ssh/id_ed25519"
+[test]
+host1   ansible_user=xeragouser	ansible_become_pass="X3r@g0#135"	ansible_password="X3r@g0#135"	ansible_ssh_host=10.100.20.113
